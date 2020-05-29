@@ -31,7 +31,19 @@ void traverseList(struct List * list){
 
 }
 
+void addWord(struct List * list, struct Node * holder){
+      struct Node *head = list -> head;
+      struct Node *add = (struct Node *) malloc(sizeof(struct Node));
+      add -> next = NULL;
+      add -> word = holder -> word;
+      add -> definition = holder -> definition;
+      while(head -> next ! = NULL){
+        head = head -> next;
+      }
+      head -> next = add;
 
+
+}
 
 int main(){
     printf("%s\n", "We are going to make a mini dictionary");
@@ -66,6 +78,12 @@ int main(){
     }
     vessel -> word = buffer;
     vessel -> definition = buffer_second;
+
+    addWord(dictionary, vessel);
+    traverseList(dictionary);
+
+    printf("%s\n", "Would you like to continue using the dictionary?");
+    scanf("%s", response);
  }
 
 
