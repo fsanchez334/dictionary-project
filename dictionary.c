@@ -25,23 +25,13 @@ void traverseList(struct List * list){
     while(head != NULL){
         char *one = head -> word;
         char *meaning = head -> definition;
-	printf("%s%s\n%s%s\n", "Word: ", one, "Definition: ", meaning);
+	      printf("%s%s\n%s%s\n", "Word: ", one, "Definition: ", meaning);
         head = head -> next;
     }
 
 }
 
-void addAfter(struct List *list, struct Node *node){
-     struct Node *starter = list -> head;
-     struct Node *replacer = (struct Node*) malloc(sizeof(struct Node));
-     replacer -> word = node -> word;
-     replacer -> definition = node -> definition;
 
-     while(starter != NULL){
-          starter = starter -> next;
-     }
-     starter -> next = replacer;
-}
 
 int main(){
     printf("%s\n", "We are going to make a mini dictionary");
@@ -53,6 +43,8 @@ int main(){
     }
 
     int end = 0;
+
+    while (end != 1) {
 
 
     printf("%s\n", "Please enter a word");
@@ -69,14 +61,14 @@ int main(){
 
     struct Node *vessel = (struct Node *) malloc(sizeof(struct Node));
     if(vessel == NULL){
- 	perror("Node could not be formed");
-	exit(1);
+ 	    perror("Node could not be formed");
+	    exit(1);
     }
     vessel -> word = buffer;
     vessel -> definition = buffer_second;
+ }
 
 
-   //traverseList(dictionary);
 
 
 
