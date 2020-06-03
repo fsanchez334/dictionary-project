@@ -1,20 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "charfunc.h"
 
-char *maker_function(int length){
-     char *holder = (char *) malloc(length);
-     return holder;
-}
-char *delimeterFunction(char *define){
-    char dash = '-';
-    int string_len = strlen(define);
-    for(int i = 0; i < string_len; i++){
-        if(define[i] == '-'){
-            define[i] = ' ';
-        }
-    }
-    return define;
 }
 int main(){
     printf("%s\n", "We are going to make a mini dictionary");
