@@ -3,7 +3,6 @@
 #include <string.h>
 #include "charfunc.h"
 
-}
 int main(){
     printf("%s\n", "We are going to make a mini dictionary");
     printf("%s\n", "How many words will you be entering?");
