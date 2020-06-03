@@ -18,6 +18,7 @@ struct Node* makeNode(char *copy, char *copy_two){
     love -> word = copy;
     love -> definition = copy_two;
     love -> next = NULL;
+    return love;
 }
 
 char *maker_function(int length){
@@ -68,20 +69,14 @@ int main(){
         strcpy(definer, define);
         printf("%s\n", definer);
 
-
-        struct Node *word_holder = makeNode(face, definer);
-        container[counter] = *word_holder;
         ++counter;
         ++stop;
-
-
-
     }
     for(int j = 0; j < amount; j++){
         printf("%s\n", list_of_words[j]);
     }
     for(int i = 0; i < amount; i++){
-        printf("%s\n", container[i].word;
+        printf("%s\n", container[i].word);
     }
 
     return 0;
