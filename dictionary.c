@@ -17,8 +17,6 @@ int main(){
     int stop = 0;
     int counter = 0;
 
-    struct Node container[amount];
-
     while(stop != amount)
     {
         printf("%s\n", "Enter the word: ");
