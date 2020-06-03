@@ -17,9 +17,6 @@ int determiner(char *answer){
     int result = strcmp ("Yes", answer);
     return result;
 }
-void makeList(struct List *list, struct Node *starter){
-     list -> head = starter;
-}
 void traverseList(struct List * list){
     struct Node *head = list -> head;
     while(head != NULL){
@@ -31,19 +28,6 @@ void traverseList(struct List * list){
 
 }
 
-void addWord(struct List * list, struct Node * holder){
-      struct Node *head = list -> head;
-      struct Node *add = (struct Node *) malloc(sizeof(struct Node));
-      add -> next = NULL;
-      add -> word = holder -> word;
-      add -> definition = holder -> definition;
-      while(head -> next ! = NULL){
-        head = head -> next;
-      }
-      head -> next = add;
-
-
-}
 
 int main(){
     printf("%s\n", "We are going to make a mini dictionary");
@@ -56,13 +40,14 @@ int main(){
 
     int end = 0;
 
-    while (end != 1) {
+    while (end == 0) {
 
 
     printf("%s\n", "Please enter a word");
 
     char buffer[100];
     char buffer_second[1000];
+    char *response;
     int amount = 0;
 
     scanf("%s", buffer);
@@ -79,17 +64,17 @@ int main(){
     vessel -> word = buffer;
     vessel -> definition = buffer_second;
 
-    addWord(dictionary, vessel);
-    traverseList(dictionary);
+    //addWord(dictionary, vessel);
 
-    printf("%s\n", "Would you like to continue using the dictionary?");
+    printf("%s\n", "Would you like to continue using the dictionary? Yes/No");
     scanf("%s", response);
+
+    int user_response = determiner(response);
+    if(user_response != 0){
+       end = 1;
+    }
  }
-
-
-
-
-
+    traverseList(dictionary);
     printf("%s\n", "Thank you for using our dictionary. Have a good day");
 
 
