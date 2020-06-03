@@ -75,9 +75,6 @@ int main(){
     for(int j = 0; j < amount; j++){
         printf("%s\n", list_of_words[j]);
     }
-    for(int i = 0; i < amount; i++){
-        printf("%s\n", container[i].word);
-    }
 
     return 0;
 }
