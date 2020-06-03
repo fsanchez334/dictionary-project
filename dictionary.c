@@ -13,18 +13,22 @@ struct List {
 
 };
 
-struct Node* makeNode(char *copy, char *copy_two){
-    struct Node *love = (struct Node *) malloc(sizeof(struct Node));
-    love -> word = copy;
-    love -> definition = copy_two;
-    love -> next = NULL;
-    return love;
-}
 
 char *maker_function(int length){
      char *holder = (char *) malloc(length);
      return holder;
 
+}
+
+char *delimeterFunction(char *define){
+    char dash = '-';
+    int string_len = strlen(define);
+    for(int i = 0; i < string_len; i++){
+        if(define[i] == '-'){
+            define[i] = ' ';
+        }
+    }
+    return define;
 }
 
 
