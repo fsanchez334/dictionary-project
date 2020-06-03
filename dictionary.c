@@ -13,19 +13,17 @@ struct List {
 
 };
 
-int determiner(char *answer){
-    int result = strcmp ("Yes", answer);
-    return result;
+struct Node* makeNode(char *copy, char *copy_two){
+    struct Node *love = (struct Node *) malloc(sizeof(struct Node));
+    love -> one = copy;
+    love -> two = copy_two;
+    love -> next = NULL;
 }
-void traverseList(struct List * list){
-    struct Node *head = list -> head;
-    while(head != NULL){
-        char *one = head -> word;
-        char *meaning = head -> definition;
-	      printf("%s%s\n%s%s\n", "Word: ", one, "Definition: ", meaning);
-        head = head -> next;
-    }
 
+char *maker_function(int length){
+     char *holder = (char *) malloc(length);
+     return holder;
+    
 }
 
 
@@ -83,11 +81,8 @@ int main(){
         printf("%s\n", list_of_words[j]);
     }
     for(int i = 0; i < amount; i++){
-        printf("%s\n", container[i].two);
+        printf("%s\n", container[i].word;
     }
     
-    return 0;
-
-
     return 0;
 }
