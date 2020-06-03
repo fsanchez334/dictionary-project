@@ -32,53 +32,61 @@ void traverseList(struct List * list){
 int main(){
     printf("%s\n", "We are going to make a mini dictionary");
 
-    struct List *dictionary = (struct List *) malloc(sizeof(struct List));
-    if(dictionary == NULL){
-        perror("Malloc for the list could not be reserved");
-        exit(1);
-    }
-
-    int end = 0;
-
-    while (end == 0) {
 
 
-    printf("%s\n", "Please enter a word");
-
-    char buffer[100];
-    char buffer_second[1000];
-    char *response;
+    printf("%s\n", "How many words will you be entering?");
     int amount = 0;
-
-    scanf("%s", buffer);
-    printf("%s%s\n", "You have entered " , buffer);
-
-    printf("%s\n", "Please enter a definition - Make sure to put '-' in between the words");
-    scanf("%s", buffer_second);
-
-    struct Node *vessel = (struct Node *) malloc(sizeof(struct Node));
-    if(vessel == NULL){
- 	    perror("Node could not be formed");
-	    exit(1);
+    
+    scanf("%d", &amount);
+    printf("%s%d\n", "You have entered: ", amount);
+    
+    char word[100];
+    char *list_of_words[amount];
+    int stop = 0;
+    int counter = 0;
+    
+    struct Node container[amount];
+    
+    while(stop != amount)
+    {
+        printf("%s\n", "Enter the word: ");
+        scanf("%s", word);
+        printf("-------------------------------");
+    
+        int word_length = strlen(word);
+        char *face = maker_function(word_length);
+        strcpy(face, word);
+        printf("%s\n", face);
+    
+        list_of_words[counter] = face;
+        
+        char define[500];
+        printf("%s\n", "Please provide for the definition you provided");
+        scanf("%s", define);
+        
+        int len_define = strlen(define);
+        char *definer = maker_function(word_length);
+        
+        strcpy(definer, define);
+        printf("%s\n", definer);
+        
+        
+        struct Node *word_holder = makeNode(face, definer);
+        container[counter] = *word_holder;
+        ++counter;
+        ++stop;
+        
+        
+        
     }
-    vessel -> word = buffer;
-    vessel -> definition = buffer_second;
-
-    //addWord(dictionary, vessel);
-
-    printf("%s\n", "Would you like to continue using the dictionary? Yes/No");
-    scanf("%s", response);
-
-    int user_response = determiner(response);
-    if(user_response != 0){
-       end = 1;
+    for(int j = 0; j < amount; j++){
+        printf("%s\n", list_of_words[j]);
     }
- }
-    traverseList(dictionary);
-    printf("%s\n", "Thank you for using our dictionary. Have a good day");
-
-
-
+    for(int i = 0; i < amount; i++){
+        printf("%s\n", container[i].two);
+    }
+    
+    return 0;
 
 
     return 0;
