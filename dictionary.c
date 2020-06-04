@@ -47,7 +47,9 @@ int main(){
     int tracker = 1;
     for(int j = 0; j < amount; j++){
         printf("%d%s%s%s", tracker, ". ", list_of_words[j], " - ");
+        free(list_of_words[j]);
         printf("%s\n", word_definitions[j]);
+        free(word_definitions[j]);
         ++tracker;
     }
 
