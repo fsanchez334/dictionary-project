@@ -43,12 +43,19 @@ int main(){
         ++counter;
         ++stop;
     }
+
+    FILE *fp;
+    fp = fopen("Dictionary.txt", "w+");
+
     printf("%s\n", "Your dictionary: ");
     int tracker = 1;
     for(int j = 0; j < amount; j++){
         printf("%d%s%s%s", tracker, ". ", list_of_words[j], " - ");
+	fwrite(list_of_words[j], 1, strlen(list_of_words[j], fp);
         free(list_of_words[j]);
+
         printf("%s\n", word_definitions[j]);
+	fwrite(word_definitions[j], 1, strlen(list_of_words[j], fp);
         free(word_definitions[j]);
         ++tracker;
     }
