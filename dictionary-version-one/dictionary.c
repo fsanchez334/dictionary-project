@@ -47,15 +47,27 @@ int main(){
     FILE *fp;
     fp = fopen("Dictionary.txt", "w+");
 
+    char header[] = "Below is your dictionary: ";
+    char *dash = "--------------";
+
+    fwrite(header, 1, strlen(header), fp);
+    fwrite("\n", 1, 1, fp);
+
     printf("%s\n", "Your dictionary: ");
     int tracker = 1;
     for(int j = 0; j < amount; j++){
         printf("%d%s%s%s", tracker, ". ", list_of_words[j], " - ");
-	fwrite(list_of_words[j], 1, strlen(list_of_words[j], fp);
+
+	fwrite(list_of_words[j], 1, strlen(list_of_words[j]), fp);
+	fwrite(dash, 1, strlen(dash), fp);
+
         free(list_of_words[j]);
 
         printf("%s\n", word_definitions[j]);
-	fwrite(word_definitions[j], 1, strlen(list_of_words[j], fp);
+
+	fwrite(word_definitions[j], 1, strlen(list_of_words[j]), fp);
+	fwrite("\n", 1, 1, fp);
+
         free(word_definitions[j]);
         ++tracker;
     }
