@@ -2,14 +2,41 @@
 #include <string.h>
 #include <stdio.h>
 
-int main(int argc, char *argv[]){
-    if(argc < 2){
-        fprintf(stderr, "<program-name> <number-of-words> <word-one> <word -n> ...");
-    }
+struct List{
+    struct Node *head;
+};
 
-    printf("%s\n", "Please enter the number of words you will want to input, followed by the words");
-    char *holder[argc];
+struct Node{
+    char *word;
+    char *definition;
+};
 
-    for(int 
+int determiner(char *response){
+    int result = strcmp("Yes", response);
+    return result;
 }
+int main()
+{
+    printf("Hello World\n");
+    
+    char word_main[10];
+    char definition_main[150];
+    int compar = 0;
+    struct List *dictionary = (struct List *) malloc(sizeof(struct List));
+    
+    while(compar != 0){
+    
+        printf("%s\n", "Please enter a word");
+        scanf("%s", word_main);
+    
+        printf("%s\n", "Please enter a definition");
+        scanf("%s", definition_main);
+    
+        struct Node *starter = (struct Node *) malloc(sizeof(struct Node));
+        starter -> word = word_main;
+        starter -> definition = definition_main;
+    }
+    
 
+    return 0;
+}
