@@ -1,25 +1,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
-#include "mylist.h"
-
-struct List{
-    struct Node *head;
-};
-
-struct Node{
-    char *word;
-    char *definition;
-    struct Node *next;
-};
+#include "listfunc`.h"
 
 
-}
-
-int determiner(char *response){
-    int result = strcmp("Yes", response);
-    return result;
-}
 int main()
 {
     printf("Hello World\n");
