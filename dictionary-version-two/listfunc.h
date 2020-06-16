@@ -38,5 +38,15 @@ int determineResponse(char *input){
     strcpy((beginner -> next) -> definition, container -> definition);
     (beginner -> next) -> next = NULL;
 }
-#endif /* #ifndef _CHARFUNC_H_ */
 
+void delimeterFunction(char *define){
+    char dash = '-';
+    int string_len = strlen(define);
+    for(int i = 0; i < string_len; i++){
+        if(define[i] == '-'){
+            define[i] = ' ';
+        }
+    }
+}
+
+#endif /* #ifndef _CHARFUNC_H_ */
