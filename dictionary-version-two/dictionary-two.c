@@ -13,37 +13,7 @@ struct Node{
     struct Node *next;
 };
 
-void addNode(struct List *list, char *data, char *data_two){
-    struct Node *newNode = (struct Node *) malloc(sizeof(struct Node));
-    if (newNode == NULL){
-         fprintf(stderr, "Could not allocate memory for new Node");
-	 exit(1);
-    }
 
-    struct Node *temp = list -> head;
-
-    newNode -> word = data;
-    newNode -> definition = data_two;
-
-    while(temp -> next){
-        temp = temp -> next;
-    }
-
-    temp -> next = newNode;
-
-
-}
-
-void traverseDiction(struct List *list){
-     struct Node *holder = list -> head;
-
-     while(holder){
-          printf("%s%s\n", holder -> word, "|");
-	  printf("%s", holder -> definition);
-
-	  holder = holder -> next;
-
-     }
 }
 
 int determiner(char *response){
