@@ -46,7 +46,7 @@ int main()
         int number = 0;
         while(head) {
           ++number;
-          printf("%d%s%s%s\n", number, ". " head -> word, " ");
+          printf("%d%s%s%s\n", number, ". Word: " , head -> word , " <----------------> Definition ");
 	        printf("%s\n", head -> definition);
 
 	        head = head -> next;
