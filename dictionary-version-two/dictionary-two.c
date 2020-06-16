@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+#include "mylist.h"
 
 struct List{
     struct Node *head;
@@ -83,7 +84,7 @@ int main()
 	scanf("%s", response);
 
 	int result = determiner(response);
-	if(respnse != 0){
+	if(response != 0){
 	    compar = 1;
 	}
     }
