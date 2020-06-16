@@ -8,42 +8,44 @@ int main()
 {
     printf("Hello World\n");
     
-    char word_main[10];
-    char definition_main[150];
-    int compar = 0;
-    int head = 0;
+    int go_flag = 0;
     struct List *dictionary = (struct List *) malloc(sizeof(struct List));
     
-    while(compar == 0){
+    while(go == 0){
     
+	char input_one[10];
+	char definition_one[100];
+	char user[10];
+
         printf("%s\n", "Please enter a word");
-        scanf("%s", word_main);
+        scanf("%s", input_one);
     
         printf("%s\n", "Please enter a definition");
-        scanf("%s", definition_main);
+        scanf("%s", definition_one);
+
     
-        struct Node *starter = (struct Node *) malloc(sizeof(struct Node));
-        starter -> word = word_main;
-        starter -> definition = definition_main;
+        struct Node *beginner = (struct Node *) malloc(sizeof(struct Node));
+        strcpy(beginner -> word, input one);
+	strcpy(beginner -> definition, definition_one);
 
-	if(head == 0){
-	    dictionary -> head = starter;
-	    head = 1;
-	}
+	push(dictionary, beginner);
 	
-	addNode(dictionary, starter -> word, starter -> definition);
-
-	char response[5];
 	printf("%s\n", "Would you like to continue using our dictionary? Yes/No");
 	scanf("%s", response);
 
-	int result = determiner(response);
-	if(response != 0){
-	    compar = 1;
+	int compare = determineResponse(user);
+	if(compare == 1){
+	    go = 1;
 	}
     }
 
-    traverseDiction(dictionary);
+    struct Node *head = dictionary -> head;
+    while(head){
+        printf("%s\n", head -> word);
+	printf("%s\n", head -> definition);
+
+	head = head -> next;
+    }
     
 
     return 0;
