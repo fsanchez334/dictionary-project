@@ -13,9 +13,9 @@ int main()
 
     while(go_flag == 0){
 
-        char input_one[10];
-	char definition_one[100];
-	char user[10];
+       char input_one[10];
+       char definition_one[100];
+       char user[10];
 
        printf("%s\n", "Please enter a word");
        scanf("%s", input_one);
@@ -39,7 +39,7 @@ int main()
        int compare = determineResponse(user);
        if(compare == 1){
 	     go_flag= 1;
-	   }
+         }
       }
 
        struct Node *head = dictionary -> head;
@@ -52,7 +52,6 @@ int main()
 
 	  head = head -> next;
     }
-
-
+	
     return 0;
 }
