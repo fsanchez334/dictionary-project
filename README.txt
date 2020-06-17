@@ -9,5 +9,4 @@ Future Implementations:
     With regards to further implementations, I am thinking about implementing the dictionary using a linked list - as I had originally planned. At the same time, as the prgram currently stands, there is memory that is being leaked, as I am not freeing up the memory that is allocated for both the words and definitions. 
    
    Follow-Ups:
-   1. Code has been ammended such that no memory is being lost, according to Valgrind
-   2. A second version of the dictionary has been made using a Linked List. Along with this, I have incoporated a function I used in the first version, which gets rid of the dashes obtained through user input. {Date Completed: June 16, 2020}
+   1. A second version of the dictionary has been made using a Linked List. Along with this, I have incoporated a function I used in the first version, which gets rid of the dashes obtained through user input. {Date Completed: June 16, 2020}
